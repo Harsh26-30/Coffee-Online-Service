@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: #f9b38e;position: relative;user-select: none;}
+        nav{position: relative;z-index: 99;;background-color: #6a3f288a;display: flex; justify-content: space-between;height: 9vw;width:96vw;}
+        #a1>img{height: 9vw;}
+        #a2>img{height: 9vw;width: 25vw;border-radius: 20px;}
+        #i1{width: 60vw;height: 40vw;top: 23%;}
+        #d1{position: relative;background-color: blue;height: 45vw;width: 90vw;display: flex;}
+        #d2{width: 50%;background-color: #e58a59;}
+        #i2{height:100%;}
+        #p1{font-family: 'Franklin Gothic Medium';font-size: 6vw;}
+        #b1{margin: 6vw 0vw 6vw 0vw;height: 8vw;width: 25vw;border-radius: 20px;border:solid white 1px;display: flex;gap: 2vw;align-items: center;background-color: #d76527;}
+        #b1>h3{font-size: 5vw;font-family: cursive;color: #6a3f288a;}
+        #b1>img{position: relative;height: 100%;width: 50%;background-size: cover;}
+        a{text-decoration: none;}
+    </style>
+</head>
+<body>
+    <center>
+     <nav>
+        <a id="a1" href="#"><img src="imageh1/ChatGPT Image Oct 19, 2025, 11_05_38 PM.png" alt="img"></a>
+        <a id="a2" href="#b1"><img id="ic" src="imageh1/cw.png" alt="img"></a>
+    </nav>
+    </center>
+    <center> <img id="i1" src="imageh1/logoex31.png" alt="img"></center>
+    <center><div id="d1">
+        <img id="i2" src="imageh1/coffee.png" alt="">
+        <div id="d2"><p id="p1">Hey Hii!  Well Come to our site we provide home delivery service of <span id="s11" style="color:#6a3f28;">coffee</span>.</p></div>
+    </div></center>
+    <center><a href="index2.html" ><button id="b1"><img id="i3" src="imageh1/bknc1.png" alt="img"><h3 id="h31">Book</h3></button></a></center>
+    <script>
+        let a2 = document.querySelector("#a2")
+        let ic = document.querySelector("#ic")
+        let s11 = document.querySelector("#s11")
+        let b1 = document.querySelector("#b1")
+        let i3 = document.querySelector("#i3")
+        let h31 = document.querySelector("#h31")
+
+        a2.addEventListener("mouseover",function () {
+            ic.src="imageh1/cw2.png"
+        })
+        a2.addEventListener("mouseout",function () {
+            ic.src="imageh1/cw.png"
+        })
+
+        s11.addEventListener("mouseover",function () {
+            s11.style.color="#f9b38e"
+        })
+        s11.addEventListener("mouseout",function () {
+            s11.style.color="#6a3f28"
+        })
+
+        b1.addEventListener("mouseover",function () {
+            i3.src="imageh1/coffee-removebg-preview.png"
+            h31.style.color="#e58a59"
+        })
+        b1.addEventListener("mouseout",function () {
+            i3.src="imageh1/bknc1.png"
+            h31.style.color="#6a3f288a"
+        })
+    </script>
+</body>
+</html>

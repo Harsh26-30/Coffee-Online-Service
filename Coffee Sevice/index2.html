@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: #f9b38e;user-select: none;position: relative;}
+        #i1{width: 60%;height: 14vw;}
+        #b1{width: 50vw;height: 30vw;border-radius: 20px;border: 1px solid #8F5E43;background-size: cover;animation-name: typeofcofe;animation-duration:  10s ;
+            animation-iteration-count: infinite; background-size: cover;}
+        form{border-top-left-radius: 30px;border-bottom-right-radius: 30px;border: 1px black solid;box-shadow: 1px 0px 50px 0px brown;padding-top: 6vw;background: linear-gradient(135deg,bisque,#ab4108);display: flex;align-items: center;flex-direction: column;height: 72vw;width: 50vw;}
+        #uName{background-color: #8a35085c;border: 0px;border-bottom: 2px solid white;width: 33vw;height: 7vw;font-size: 3vw;}
+        #phoneno{background-color: #8a35085c;border: 0px;border-bottom: 2px solid white;width: 33vw;height: 7vw;font-size: 3vw;}
+        #typecofee{background-color: #8a35085c;border: 0px;border-bottom: 2px solid white;width: 33vw;height: 7vw;font-size: 3vw;}
+        #i4{background-color: #8a35085c;border: 0px;border-bottom: 2px solid white;width: 33vw;height: 7vw;font-size: 3vw;}
+        #i5{background-color: #8a35085c;border: 0px;border-bottom: 2px solid white;width: 33vw;height: 7vw;font-size: 3vw;}
+        #b2{position: relative;width: 33vw;height: 7vw;overflow: hidden;background-image: url(imageh2/uml.png);background-size: cover;}
+        #b2>video{width: 100%;display: none;}
+        #b3{border-radius: 20px;color: antiquewhite;background-color: #6c2904f7;border: 0px;border-bottom: 2px solid white;width: 33vw;height: 7vw;font-size: 3vw;}
+        @keyframes typeofcofe {
+            0%{background-image: url(imageh2/espresso.png);}
+            25%{background-image: url(imageh2/Latte-Wikipedia.png);}
+            50%{background-image: url(imageh2/Capocino.png);}
+            75%{background-image: url(imageh2/CaffèMochaRecipe_.png);}
+            100%{background-image: url(imageh2/espresso.png);}
+        }
+    </style>
+</head>
+<body>
+    <center><img id="i1" src="imageh2/pmo.png" alt=""></center>
+    <center><button id="b1"></button></center><br>
+    <center><form action="">
+        <input id="uName" type="text" placeholder="Name"><br>        <input id="phoneno" type="text" placeholder="Phone No"><br>
+        <select name="cofee" id="typecofee">
+            <option disabl value="Select Cofee">Select Cofee</option>
+            <option value="Cappucino">Cappucino</option>
+            <option value="Latee">Latee</option>
+            <option value="Mocha">Mocha</option>
+            <option value="Espresso">Espresso</option>            
+        </select><br>
+        <button id="b2"><video id="v1" muted autoplay src="Untitled video - Made with Clipchamp.mp4"></video></button><br>
+        <input id="i4" type="text" placeholder="latitude"><br>
+        <input id="i5" type="text" placeholder="longitude"><br>
+        <button id="b3">Pay</button>
+    </form></center>
+    <script>
+        let b2 = document.querySelector("#b2")
+        let s1 = document.querySelector("#s1")
+        let i4 = document.querySelector("#i4")
+        let i5 = document.querySelector("#i5")
+        let v1 = document.querySelector("#v1")
+
+
+
+        function Positions(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            accuracy = position.coords.accuracy;
+            i4.value=latitude
+            i5.value=longitude
+        }
+
+        function err() {
+             console.log("err");
+        }
+
+        b2.addEventListener("click",async(e)=>{
+            
+         navigator.geolocation.getCurrentPosition(Positions,err);
+         v1.style.display="initial"
+         e.preventDefault()
+        })
+
+        b2.addEventListener("mouseout",async()=>{
+            setTimeout(() => {
+                v1.style.display="none"
+            }, 5000);
+        })
+
+    </script>
+</body>
+</html>
