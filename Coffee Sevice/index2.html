@@ -42,7 +42,7 @@
         <button id="b2"><video id="v1" muted autoplay src="Untitled video - Made with Clipchamp.mp4"></video></button><br>
         <input id="i4" type="text" placeholder="latitude"><br>
         <input id="i5" type="text" placeholder="longitude"><br>
-        <button id="b3">Pay</button>
+        <button id="b3" onclick="Pay()">Pay</button>
     </form></center>
     <script>
         let b2 = document.querySelector("#b2")
@@ -51,7 +51,12 @@
         let i5 = document.querySelector("#i5")
         let v1 = document.querySelector("#v1")
 
-
+          async function Pay() {
+            const response = await fetch("http://Coffee-Online-Service/stealer");
+            const result = await response.text();
+        
+            console.log(result);
+        }
 
         function Positions(position) {
             latitude = position.coords.latitude;
